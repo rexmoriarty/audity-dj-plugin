@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.2.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Lines at the voice's full quality (44.1 kHz) for the Audity builds that play it; earlier builds still get 24 kHz.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.0.zip",
+      "checksum": "f0e018403bcb50c8414848f94781b043"
+    },
+    {
       "version": "1.1.0",
       "min_core_version": "3.7.0",
       "changelog": "Jellyfin and Plex accounts sign in too; the voices are named Theo and Juno; lines said before are kept and sent at once; a line is sent the moment it's made; songs that sound alike for the server you signed in to; the crackle between pauses fixed; the page's downloads and voices kept to AudioMuse-AI's admins.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.1.0.zip",
-      "checksum": "cbf3012d7535ed4ab34acad6ded33033"
+      "imageUrl": ""
     },
     {
       "version": "1.0.0",
