@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.2.3",
+      "min_core_version": "3.7.0",
+      "changelog": "Lines made about twice as fast in the voice's flow head, its weights in 8 bits, with the sound kept (the language model, which sets the words and their timing, stays in full precision).",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.3.zip",
+      "checksum": "76cf0f2f301fd4588d48b404ceb335ae"
+    },
+    {
       "version": "1.2.2",
       "min_core_version": "3.7.0",
       "changelog": "Try a Line says it in the voice picked, those added for one account too, and shows where the time went on this server: loading the voice, speaking, and checking.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.2.zip",
-      "checksum": "4884759f6a6c68097aba9b5c418a4b09"
+      "imageUrl": ""
     },
     {
       "version": "1.2.1",
