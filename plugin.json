@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.2.4",
+      "min_core_version": "3.7.0",
+      "changelog": "Lines made faster again: the voice's language model no longer works out word guesses it never uses, about half its work a step, with the sound exactly the same.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.4.zip",
+      "checksum": "6ac685684e21d66ba20c2b72112f11b1"
+    },
+    {
       "version": "1.2.3",
       "min_core_version": "3.7.0",
       "changelog": "Lines made about twice as fast in the voice's flow head, its weights in 8 bits, with the sound kept (the language model, which sets the words and their timing, stays in full precision).",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.3.zip",
-      "checksum": "76cf0f2f301fd4588d48b404ceb335ae"
+      "imageUrl": ""
     },
     {
       "version": "1.2.2",
