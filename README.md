@@ -1,0 +1,68 @@
+# Audity DJ for AudioMuse-AI
+
+The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI). The DJ's voice is made on your own server, for Navidrome, Jellyfin or Plex, whichever AudioMuse-AI is connected to. Once the plugin is installed, Audity finds it on its own: the DJ shows on every device signed in to your music server, and it talks with the phone locked.
+
+## Install
+
+1. In AudioMuse-AI (3.7.0 or later), open **Plugins → Repositories** and add:
+
+   ```
+   https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/manifest.json
+   ```
+
+2. Under **Manage Plugins**, install **Audity DJ**, then tap **Apply now (restart)**.
+3. Open **Audity DJ** in AudioMuse-AI's menu and tap **Download the Voice** (about 4.5 GB). An admin of your music server can start it from Audity too, under Settings → Radio & Autoplay.
+
+New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
+
+## What it does
+
+- **Says the DJ's lines** in a voice made on your server (Ming-3.0-tts 0.5B by inclusionAI, MIT license), checked word by word with AudioMuse-AI's own speech-to-text, and made again if a word went missing.
+- **Two voices, Theo and Juno.** Both were designed from a written description, so neither is a real person's voice. You can add your own (below).
+- **Remembers what the DJ said and played** for each account, so the DJ on one device knows what another played this week.
+- **Keeps the last 150 lines it made**, so a line said before comes back at once.
+- **Finds songs that sound alike** from AudioMuse-AI's analysis, in the library of the server the app signed in to.
+
+## What it takes
+
+- **Disk:** about 4.5 GB once the voice is downloaded.
+- **Memory:** about 5.5 GB while a DJ session is on, and none otherwise. The voice starts when a DJ session starts. It stops when the DJ is turned off, or 2 minutes after the app closes.
+- **Processor:** each line is made while the song before it plays.
+
+To keep the voice when AudioMuse-AI's container is re-created, keep its plugin folder on your disk. If your compose file doesn't already, add this under the flask container's `volumes:`:
+
+```yaml
+      - ./plugins:/app/plugin/installed
+```
+
+## Sign-in and privacy
+
+- **Audity signs in with the account it already uses** on your music server, and the plugin checks it with that server. For Plex, it also asks plex.tv for the account's name. A check is remembered for 10 minutes.
+- **Only AudioMuse-AI admins** can use the plugin's page: downloading or removing the voice, adding or removing voices, and seeing which accounts use the DJ.
+- **Kept on your server only:**
+  - in AudioMuse-AI's database: each account's voice, its DJ's last 30 lines, and the songs it played in the last 3 days;
+  - in the plugin's folder: the last 150 lines, as sound.
+- **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: Ming-3.0-tts's code from GitHub and its weights from Hugging Face, both at a fixed version, then PyTorch and the Python packages it needs.
+
+## Your own voice
+
+On the plugin's page, under **Voices**, add one clip of someone talking (5 to 15 seconds, WAV or FLAC) and its exact words. Fill in **Only for the account** to keep it to one account. Or add a `.zip` holding the clip and a `voice.json`:
+
+```json
+{"name": "Your Voice", "detail": "A few words about it", "clips": [{"file": "clip.wav", "words": "The clip's exact words."}], "pace": 1.0}
+```
+
+`pace` (0.7 to 1) slows the voice from its clip's own pace, with its pitch kept.
+
+Only add a voice you have the right to use: your own, or that of someone who agreed in writing.
+
+## Settings
+
+Set in the flask container's environment, if ever needed:
+
+- `AUDITY_DJ_PRECISION`: `float32` (the default, fastest on most processors) or `bfloat16` (half the memory, slower on most processors).
+- `AUDITY_DJ_THREADS`: how many processor threads the voice uses (all of them by default).
+
+## If Audity doesn't find it
+
+Audity looks for AudioMuse-AI at your music server's address, on port 8000. If yours is somewhere else, type its address in Audity under **Settings → Radio & Autoplay → Get the DJ → AudioMuse-AI Address**.

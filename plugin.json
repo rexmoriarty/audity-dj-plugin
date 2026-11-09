@@ -1,0 +1,26 @@
+{
+  "id": "audity_dj",
+  "name": "Audity DJ",
+  "author": "Audity",
+  "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: its voice made on this server only while a DJ session is on, and what the DJ remembers for each account, shared by all your devices.",
+  "targets": [
+    "flask"
+  ],
+  "requirements": [],
+  "versions": [
+    {
+      "version": "1.1.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Jellyfin and Plex accounts sign in too; the voices are named Theo and Juno; lines said before are kept and sent at once; a line is sent the moment it's made; songs that sound alike for the server you signed in to; the crackle between pauses fixed; the page's downloads and voices kept to AudioMuse-AI's admins.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.1.0.zip",
+      "checksum": "cbf3012d7535ed4ab34acad6ded33033"
+    },
+    {
+      "version": "1.0.0",
+      "min_core_version": "3.7.0",
+      "changelog": "First release: the DJ's voice (Ming-3.0-tts 0.5B on the processor), two voices and your own, lines checked with speech-to-text, and the DJ's memory per Navidrome account.",
+      "imageUrl": ""
+    }
+  ]
+}

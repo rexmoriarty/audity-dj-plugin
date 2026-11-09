@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    {
+      "id": "audity_dj",
+      "name": "Audity DJ",
+      "author": "Audity",
+      "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: its voice made on this server only while a DJ session is on, and what the DJ remembers for each account, shared by all your devices.",
+      "pluginUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/plugin.json"
+    }
+  ]
+}
