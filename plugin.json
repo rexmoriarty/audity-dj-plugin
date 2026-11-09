@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.2.2",
+      "min_core_version": "3.7.0",
+      "changelog": "Try a Line says it in the voice picked, those added for one account too, and shows where the time went on this server: loading the voice, speaking, and checking.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.2.zip",
+      "checksum": "4884759f6a6c68097aba9b5c418a4b09"
+    },
+    {
       "version": "1.2.1",
       "min_core_version": "3.7.0",
       "changelog": "A cleaner page in AudioMuse-AI's own style: each voice's name, description and account can be edited, as Audity shows them, and its clip played from its row.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.2.1.zip",
-      "checksum": "2a55aee17c921ec7317ffaf37e06c697"
+      "imageUrl": ""
     },
     {
       "version": "1.2.0",
