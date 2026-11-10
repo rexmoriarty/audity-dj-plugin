@@ -17,7 +17,9 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 
 **Updating from 1.2 or earlier:** 1.3.0 brings a new, much faster voice. Tap **Download the Voice** on the plugin's page once more. The earlier voice keeps the DJ talking until the new one is in, and then **Earlier Voice: Ming → Remove** frees its 4.5 GB.
 
-**If the download asks for a Hugging Face token:** the voice's two files from Neuphonic are free, but Hugging Face gives them only to an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [neutts-air-q4-gguf](https://huggingface.co/neuphonic/neutts-air-q4-gguf) and [distill-neucodec](https://huggingface.co/neuphonic/distill-neucodec) (approved at once), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
+**No Hugging Face account is needed.** The voice's files come from this repository's own release, [neutts-air-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/neutts-air-1): Neuphonic's NeuTTS Air and distill-neucodec, and NTU SPML's DistilHuBERT, each unchanged and under its Apache-2.0 license, with credit to their makers.
+
+**If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Neuphonic's two files are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [neutts-air-q4-gguf](https://huggingface.co/neuphonic/neutts-air-q4-gguf) and [distill-neucodec](https://huggingface.co/neuphonic/distill-neucodec) (approved at once), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 
 ## What it does
 
@@ -46,7 +48,7 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
 - **Kept on your server only:**
   - in AudioMuse-AI's database: each account's voice, its DJ's last 30 lines, and the songs it played in the last 3 days;
   - in the plugin's folder: the last 150 lines, as sound.
-- **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, llama.cpp and the Python packages it needs, all at fixed versions, and the voice's weights from Hugging Face at a fixed version, each file checked against its SHA-256.
+- **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, llama.cpp and the Python packages it needs, all at fixed versions, and the voice's weights from this repository's release (Hugging Face only if GitHub can't be reached) at a fixed version, each file checked against its SHA-256.
 
 ## Your own voice
 
