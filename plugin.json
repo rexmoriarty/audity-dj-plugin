@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.3.1",
+      "min_core_version": "3.7.0",
+      "changelog": "The plugin's page works again: in 1.3.0 a mistake in its script left it showing \u2026 with no way to download the voice. The page also fills in at once, not after several seconds, and no longer keeps the server busy while it's open.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.3.1.zip",
+      "checksum": "a8944627119a5d48e2dea03f114f68dc"
+    },
+    {
       "version": "1.3.0",
       "min_core_version": "3.7.0",
       "changelog": "A new voice, NeuTTS Air (Neuphonic, Apache-2.0), about three times quicker on a processor, so a line is ready well before its song: tap Download the Voice again (3.4 GB). Theo is a new, deeper and cleaner voice. Your earlier voice stays until the new one is in, and can be removed after. A colon in a line now gets a full stop's pause, so a name after it no longer runs on. A take the voice says nothing in is made again, not the line lost.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.3.0.zip",
-      "checksum": "fd23798f05bfc46e84b2cca02e9bde8b"
+      "imageUrl": ""
     },
     {
       "version": "1.2.4",
