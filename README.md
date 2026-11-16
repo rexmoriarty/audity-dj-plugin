@@ -32,8 +32,8 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 ## What it takes
 
 - **Disk:** about 1.5 GB once the voice is downloaded.
-- **Memory:** about 1 GB while a DJ session is on, and none otherwise. The voice starts when a DJ session starts. It stops when the DJ is turned off, or 2 minutes after the app closes.
-- **Processor:** 2 threads. A line of the bank's sentences alone is ready at once; one with a name in a second or two on a desktop processor, and the session's first a few seconds more while Pocket TTS starts.
+- **Memory:** about 1 GB. Once it's downloaded, the voice stays loaded, so the DJ is ready the moment you start it.
+- **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in a second or two on a desktop processor.
 
 To keep the voice when AudioMuse-AI's container is re-created, keep its plugin folder on your disk. If your compose file doesn't already, add this under the flask container's `volumes:`:
 
@@ -66,7 +66,7 @@ Only add a voice you have the right to use: your own, or that of someone who agr
 
 Set in the flask container's environment, if ever needed:
 
-- `AUDITY_DJ_THREADS`: how many processor threads the voice uses (2 for Pocket TTS).
+- `AUDITY_DJ_THREADS`: how many processor threads the voice uses (Pocket TTS's own 1 by default, the quicker).
 - `AUDITY_DJ_NAME_WAIT`: how many seconds a line waits for its names before it goes without them (12).
 
 ## If Audity doesn't find it
