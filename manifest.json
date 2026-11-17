@@ -4,7 +4,7 @@
       "id": "audity_dj",
       "name": "Audity DJ",
       "author": "Audity",
-      "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: Theo's lines from a bank of clips made ahead, with only the names said on this server, only while a DJ session is on, and what the DJ remembers for each account, shared by all your devices.",
+      "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: Theo's lines said whole on this server, only while a DJ session is on, with his bank of clips made ahead kept to switch back to, and what the DJ remembers for each account, shared by all your devices.",
       "pluginUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/plugin.json"
     }
   ]

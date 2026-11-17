@@ -23,7 +23,9 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 
 ## What it does
 
-- **Says the DJ's lines from Theo's bank:** about 5,900 sentences made ahead, each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in a second or two. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
+- **Says the DJ's lines whole** (since 1.5.0): each line is said in one go on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0), in a new voice for Theo, with no joins. A line Audity asks for ahead, while the song before it plays, is made in three takes: a take that's clipped, cut off or has a long silence inside is thrown out, and the lowest-pitched of the rest is kept.
+- **Writes the lines on your server, for the Audity builds that send what's playing.** Audity sends the song playing and the one coming next, their years, the account's plays of them, the time of day, and the kind of set. The plugin writes the line from the bank's own sentences and links the two songs where it can: the same album or year, years apart, a change of genre, era or tempo ("This one came out in 1977. Here's Dreams, by Fleetwood Mac."). It never says it the same way twice in a row, and says the account plays something a lot, or loves it, only when the plays Audity sent show it. There's no language model on the server or the phone, and nothing new to download. Earlier Audity builds write their own lines, and the plugin says those whole too.
+- **Keeps Theo's bank to switch back to:** about 5,900 sentences made ahead, each a clip, with only the names said by Pocket TTS. The **Lines** switch on the plugin's page puts it back.
 - **Theo** was designed from a written description, so his isn't a real person's voice. While the bank is the DJ's voice, the DJ is Theo; Juno and voices you add (below) are used by the earlier voice, NeuTTS Air, if you keep it and remove the bank.
 - **Remembers what the DJ said and played** for each account, so the DJ on one device knows what another played this week.
 - **Keeps the last 150 lines it made**, so a line said before comes back at once.
@@ -32,8 +34,8 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 ## What it takes
 
 - **Disk:** about 1.5 GB once the voice is downloaded.
-- **Memory:** about 1 GB. Once it's downloaded, the voice stays loaded, so the DJ is ready the moment you start it.
-- **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in a second or two on a desktop processor.
+- **Memory:** about 1.6 GB. Once it's downloaded, the voice stays loaded, so the DJ is ready the moment you start it.
+- **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in a second or two on a desktop processor. A whole line takes about a third of its length to say once on a desktop processor, and is made three times while the song before it plays.
 
 To keep the voice when AudioMuse-AI's container is re-created, keep its plugin folder on your disk. If your compose file doesn't already, add this under the flask container's `volumes:`:
 
@@ -47,7 +49,7 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
 - **Only AudioMuse-AI admins** can use the plugin's page: downloading or removing the voice, adding or removing voices, and seeing which accounts use the DJ.
 - **Kept on your server only:**
   - in AudioMuse-AI's database: each account's voice, its DJ's last 30 lines, and the songs it played in the last 3 days;
-  - in the plugin's folder: the last 150 lines, as sound.
+  - in the plugin's folder: the last 150 lines, as sound, and for each account the last 400 lines the plugin wrote, as text, so it doesn't repeat itself.
 - **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights and the bank from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
 
 ## Your own voice
@@ -68,6 +70,8 @@ Set in the flask container's environment, if ever needed:
 
 - `AUDITY_DJ_THREADS`: how many processor threads the voice uses (Pocket TTS's own 1 by default, the quicker).
 - `AUDITY_DJ_NAME_WAIT`: how many seconds a line waits for its names before it goes without them (12).
+- `AUDITY_DJ_WHOLE_TAKES`: how many takes of a whole line asked ahead are made, the lowest-pitched good one kept (3). A line Audity is waiting on is made in 1 (`AUDITY_DJ_WHOLE_NOW_TAKES`).
+- `AUDITY_DJ_WHOLE_HEAR`: `0` stops the check of each whole line made ahead with AudioMuse-AI's own speech-to-text, which makes a line again if words went missing.
 
 ## If Audity doesn't find it
 

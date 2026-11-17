@@ -2,19 +2,25 @@
   "id": "audity_dj",
   "name": "Audity DJ",
   "author": "Audity",
-  "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: Theo's lines from a bank of clips made ahead, with only the names said on this server, only while a DJ session is on, and what the DJ remembers for each account, shared by all your devices.",
+  "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: Theo's lines said whole on this server, only while a DJ session is on, with his bank of clips made ahead kept to switch back to, and what the DJ remembers for each account, shared by all your devices.",
   "targets": [
     "flask"
   ],
   "requirements": [],
   "versions": [
     {
+      "version": "1.5.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Whole lines: every line is said in one go by Pocket TTS in a new voice for Theo, with no joins, for every Audity build. For the builds that send what's playing, the lines are written on this server from the song playing and the one coming next (the same album or year, years apart, a change of genre, era or tempo), your plays of them, the time of day and the kind of set, in the bank's own sentences and never the same way twice in a row. It says you play something a lot, or love it, only when your plays show it. A line asked ahead is made in three takes, and a take that's clipped, cut off or has a long silence is thrown out. The page's Lines switch puts the bank's clips back. Nothing new to download.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.5.0.zip",
+      "checksum": "4a17ac5d884eb112a3e9901a33b369d3"
+    },
+    {
       "version": "1.4.2",
       "min_core_version": "3.7.0",
       "changelog": "Each sentence of the DJ's lines ends whole: a soft last word (\"library\", \"evening\") was cut off slightly where the pieces of a line were joined, and now fades out as it was recorded. Lines kept from before are made again the new way.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.4.2.zip",
-      "checksum": "e8479177aec78e8ea10968bcf19a3ac6"
+      "imageUrl": ""
     },
     {
       "version": "1.4.1",
