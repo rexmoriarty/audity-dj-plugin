@@ -11,19 +11,21 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
    ```
 
 2. Under **Manage Plugins**, install **Audity DJ**, then tap **Apply now (restart)**.
-3. Open **Audity DJ** in AudioMuse-AI's menu and tap **Download the Voice** (about 1.5 GB). An admin of your music server can start it from Audity too, under Settings → Radio & Autoplay.
+3. Open **Audity DJ** in AudioMuse-AI's menu and tap **Download the Voice** (about 1.6 GB). An admin of your music server can start it from Audity too, under Settings → Radio & Autoplay.
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
+**Updating from 1.4 or 1.5:** 1.6.0 brings Theo's new bank, made with Qwen3-TTS. Tap **Download the New Bank** on the plugin's page once (0.29 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed. Audity picks up the new sentences on its own.
+
 **Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voice keeps the DJ talking until the bank is in, and then **Earlier Voice → Remove** frees its space (NeuTTS Air's 3.4 GB, Ming's 4.5 GB).
 
-**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-ming-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-ming-1), Theo's bank.
+**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-qwen-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-1), Theo's bank.
 
 **If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 
 ## What it does
 
-- **Says the DJ's lines from Theo's bank:** about 5,900 sentences made ahead, each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in a second or two. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
+- **Says the DJ's lines from Theo's bank:** about 9,700 sentences made ahead with Qwen3-TTS (Apache-2.0), each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in about a second. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
 - **Theo** was designed from a written description, so his isn't a real person's voice. While the bank is the DJ's voice, the DJ is Theo; Juno and voices you add (below) are used by the earlier voice, NeuTTS Air, if you keep it and remove the bank.
 - **Remembers what the DJ said and played** for each account, so the DJ on one device knows what another played this week.
 - **Keeps the last 150 lines it made**, so a line said before comes back at once.
@@ -31,9 +33,9 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 
 ## What it takes
 
-- **Disk:** about 1.5 GB once the voice is downloaded.
+- **Disk:** about 1.6 GB once the voice is downloaded.
 - **Memory:** about 1 GB. Once it's downloaded, the voice stays loaded, so the DJ is ready the moment you start it.
-- **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in a second or two on a desktop processor.
+- **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in about a second on a desktop processor.
 
 To keep the voice when AudioMuse-AI's container is re-created, keep its plugin folder on your disk. If your compose file doesn't already, add this under the flask container's `volumes:`:
 

@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.6.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Theo's new bank: about 9,700 sentences made ahead by Qwen3-TTS, with many more ways to say each kind of line, and the names said on this server by Pocket TTS in the same voice, in under a second. Tap Download the New Bank on the plugin's page (0.29 GB); the bank before keeps talking until it's in, and is then removed. Audity picks up the new sentences on its own.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.6.0.zip",
+      "checksum": "daf1622fdfea0aeac944e4ed5118f39c"
+    },
+    {
       "version": "1.5.1",
       "min_core_version": "3.7.0",
       "changelog": "Back to Theo's bank, as in 1.4.2: 1.5.0's whole lines were too slow on a NAS, and a song change could go by with no line. The DJ talks from the bank's clips again, with only the names said on this server. Nothing to download again.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.5.1.zip",
-      "checksum": "e2b40e3040235cc44e101ab97d0f686b"
+      "imageUrl": ""
     },
     {
       "version": "1.5.0",
