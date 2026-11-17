@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.4.2",
+      "min_core_version": "3.7.0",
+      "changelog": "Each sentence of the DJ's lines ends whole: a soft last word (\"library\", \"evening\") was cut off slightly where the pieces of a line were joined, and now fades out as it was recorded. Lines kept from before are made again the new way.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.4.2.zip",
+      "checksum": "e8479177aec78e8ea10968bcf19a3ac6"
+    },
+    {
       "version": "1.4.1",
       "min_core_version": "3.7.0",
       "changelog": "The DJ's voice stays loaded once it's downloaded, so it's ready the moment you start the DJ, even after the app was closed, and it starts again on its own should it ever stop. A line the app needs right away (the DJ button's, a skip's) is made before the lines for songs further ahead, and a closed session's waiting lines are let go. The page lists the last lines asked and how each was made. Names are said a little quicker, on Pocket TTS's own single thread. For the app: the bank's sentences at /app/bank.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.4.1.zip",
-      "checksum": "dffd8e63aecedc1378dfee82e3a7d696"
+      "imageUrl": ""
     },
     {
       "version": "1.4.0",
