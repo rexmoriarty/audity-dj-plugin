@@ -15,6 +15,8 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
+**Updating from 1.7:** 1.8.0 needs nothing downloaded again: the same bank, and requests read here.
+
 **Updating from 1.4 to 1.6:** 1.7.0 brings Theo's bank again, about 6 dB louder, so he isn't quiet against the music. Tap **Download the New Bank** on the plugin's page once (0.32 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed. Audity picks up the new sentences on its own.
 
 **Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voice keeps the DJ talking until the bank is in, and then **Earlier Voice → Remove** frees its space (NeuTTS Air's 3.4 GB, Ming's 4.5 GB).
@@ -26,6 +28,7 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 ## What it does
 
 - **Says the DJ's lines from Theo's bank:** about 10,600 sentences made ahead with Qwen3-TTS (Apache-2.0), each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in about a second. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
+- **Reads what you ask the DJ, on your server,** for the Audity builds that send it (since 1.8.0): your words against your own library (play something, starting with a song, no more or less of something, more like this, something different, your most played, new releases, deep cuts, throwbacks), with no language model on the server or the phone. A mood that names nothing ("something chill for a rainy night") also goes to AudioMuse-AI's own text search, where CLAP is on in its settings and your library has been analyzed with it. The next songs' names are said ahead, so the DJ's lines come back at once.
 - **Theo** was designed from a written description, so his isn't a real person's voice. While the bank is the DJ's voice, the DJ is Theo; Juno and voices you add (below) are used by the earlier voice, NeuTTS Air, if you keep it and remove the bank.
 - **Remembers what the DJ said and played** for each account, so the DJ on one device knows what another played this week.
 - **Keeps the last 150 lines it made**, so a line said before comes back at once.
