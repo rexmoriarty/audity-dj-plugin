@@ -15,13 +15,11 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
-**Updating from 1.7:** 1.8.0 needs nothing downloaded again: the same bank, and requests read here.
-
-**Updating from 1.4 to 1.6:** 1.7.0 brings Theo's bank again, about 6 dB louder, so he isn't quiet against the music. Tap **Download the New Bank** on the plugin's page once (0.32 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed. Audity picks up the new sentences on its own.
+**Updating from 1.4 to 1.8.0:** 1.8.1 brings Theo's bank made again with his voice trained once more, so his moods come through more. Tap **Download the New Bank** on the plugin's page once (0.33 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed.
 
 **Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voice keeps the DJ talking until the bank is in, and then **Earlier Voice → Remove** frees its space (NeuTTS Air's 3.4 GB, Ming's 4.5 GB).
 
-**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-qwen-2](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-2), Theo's bank.
+**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank.
 
 **If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 

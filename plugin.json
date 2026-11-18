@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.8.1",
+      "min_core_version": "3.7.0",
+      "changelog": "Theo's bank made again with his voice trained once more, so his moods come through more: about 10,600 sentences, as loud as 1.7.0's. Tap Download the New Bank on the plugin's page (0.33 GB); the bank before keeps talking until it's in, and is then removed.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.1.zip",
+      "checksum": "9da059865fc78fc05387647377dd3b49"
+    },
+    {
       "version": "1.8.0",
       "min_core_version": "3.7.0",
       "changelog": "Asking the DJ, understood on this server: for the Audity builds that send what you said, your words are read here against your own library (play something, starting with a song, no more or less of something, more like this, something different, older or newer, your most played, new releases, deep cuts, throwbacks), with no language model, and a feel that names nothing (\"something chill for a rainy night\") goes to AudioMuse-AI's own text search where CLAP is on. The next songs' names are said ahead, so the DJ's lines come back at once. The same bank as 1.7.0, so nothing to download again.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.0.zip",
-      "checksum": "68781627fb91126b022c0589bc08ffb6"
+      "imageUrl": ""
     },
     {
       "version": "1.7.0",
