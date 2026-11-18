@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.7.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Theo louder: his bank made again about 6 dB louder, so he isn't quiet against the music, with the names said as loud. About 10,600 sentences now, with lines remade that came out wrong before and new ways to say your play counts. Tap Download the New Bank on the plugin's page (0.32 GB); the bank before keeps talking until it's in, and is then removed.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.7.0.zip",
+      "checksum": "5f510a7f51e454451c01c104abb09c00"
+    },
+    {
       "version": "1.6.0",
       "min_core_version": "3.7.0",
       "changelog": "Theo's new bank: about 9,700 sentences made ahead by Qwen3-TTS, with many more ways to say each kind of line, and the names said on this server by Pocket TTS in the same voice, in under a second. Tap Download the New Bank on the plugin's page (0.29 GB); the bank before keeps talking until it's in, and is then removed. Audity picks up the new sentences on its own.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.6.0.zip",
-      "checksum": "daf1622fdfea0aeac944e4ed5118f39c"
+      "imageUrl": ""
     },
     {
       "version": "1.5.1",

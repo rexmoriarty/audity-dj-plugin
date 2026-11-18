@@ -15,17 +15,17 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
-**Updating from 1.4 or 1.5:** 1.6.0 brings Theo's new bank, made with Qwen3-TTS. Tap **Download the New Bank** on the plugin's page once (0.29 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed. Audity picks up the new sentences on its own.
+**Updating from 1.4 to 1.6:** 1.7.0 brings Theo's bank again, about 6 dB louder, so he isn't quiet against the music. Tap **Download the New Bank** on the plugin's page once (0.32 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed. Audity picks up the new sentences on its own.
 
 **Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voice keeps the DJ talking until the bank is in, and then **Earlier Voice → Remove** frees its space (NeuTTS Air's 3.4 GB, Ming's 4.5 GB).
 
-**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-qwen-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-1), Theo's bank.
+**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-qwen-2](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-2), Theo's bank.
 
 **If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 
 ## What it does
 
-- **Says the DJ's lines from Theo's bank:** about 9,700 sentences made ahead with Qwen3-TTS (Apache-2.0), each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in about a second. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
+- **Says the DJ's lines from Theo's bank:** about 10,600 sentences made ahead with Qwen3-TTS (Apache-2.0), each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in about a second. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
 - **Theo** was designed from a written description, so his isn't a real person's voice. While the bank is the DJ's voice, the DJ is Theo; Juno and voices you add (below) are used by the earlier voice, NeuTTS Air, if you keep it and remove the bank.
 - **Remembers what the DJ said and played** for each account, so the DJ on one device knows what another played this week.
 - **Keeps the last 150 lines it made**, so a line said before comes back at once.
