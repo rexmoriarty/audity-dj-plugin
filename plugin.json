@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.8.2",
+      "min_core_version": "3.7.0",
+      "changelog": "Theo's bank is the only voice: the plugin's page no longer lists the voices from before it (Theo and Juno, and voices added by hand) or adding a voice, and Try a Line says it in the bank, as nothing says a line in them now. NeuTTS Air and Ming, the voices before the bank, are removed once the bank is in if they're still on the server (3.4 and 4.5 GB). Nothing to download again.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.2.zip",
+      "checksum": "18300b83f27244f2acfd66df9b62ac6e"
+    },
+    {
       "version": "1.8.1",
       "min_core_version": "3.7.0",
       "changelog": "Theo's bank made again with his voice trained once more, so his moods come through more: about 10,600 sentences, as loud as 1.7.0's. Tap Download the New Bank on the plugin's page (0.33 GB); the bank before keeps talking until it's in, and is then removed.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.1.zip",
-      "checksum": "9da059865fc78fc05387647377dd3b49"
+      "imageUrl": ""
     },
     {
       "version": "1.8.0",
