@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.8.3",
+      "min_core_version": "3.7.0",
+      "changelog": "When AudioMuse-AI can't reach your Navidrome, Jellyfin or Plex at the address it has saved (the server moved to another machine, say), the app is told so, with the one step to fix it: update that address in AudioMuse-AI's settings. Before, it was told its sign-in was turned down. Nothing to download again.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.3.zip",
+      "checksum": "508dbe53b2725536b2577d808d9557da"
+    },
+    {
       "version": "1.8.2",
       "min_core_version": "3.7.0",
       "changelog": "Theo's bank is the only voice: the plugin's page no longer lists the voices from before it (Theo and Juno, and voices added by hand) or adding a voice, and Try a Line says it in the bank, as nothing says a line in them now. NeuTTS Air and Ming, the voices before the bank, are removed once the bank is in if they're still on the server (3.4 and 4.5 GB). Nothing to download again.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.2.zip",
-      "checksum": "18300b83f27244f2acfd66df9b62ac6e"
+      "imageUrl": ""
     },
     {
       "version": "1.8.1",

@@ -15,6 +15,8 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
+**Updating from 1.8.2:** 1.8.3 needs nothing downloaded again. When AudioMuse-AI can't reach your music server at the address it has saved, as after moving the server to another machine, Audity says so, with the one step to fix it: update that address in AudioMuse-AI's settings.
+
 **Updating from 1.8.1:** 1.8.2 needs nothing downloaded again: Theo's bank is the plugin's only voice now, and its page shows only the bank.
 
 **Updating from 1.4 to 1.8.0:** 1.8.1 brings Theo's bank made again with his voice trained once more, so his moods come through more. Tap **Download the New Bank** on the plugin's page once (0.33 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed.
