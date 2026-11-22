@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.8.5",
+      "min_core_version": "3.7.0",
+      "changelog": "Ready for the DJ to tell you about the music: Update the Voice brings the artists' facts from MusicBrainz (173 MB, free to use), who's a person or a band, when they were born or formed, where they're from and their albums in order, looked up on your server, so nothing about your library is sent anywhere. Audity can also ask each song's pace, key, energy and moods from AudioMuse-AI's own analysis, which needs no download. Whatever is new comes as one Update the Voice, its size said once; the bank you have stays. Nothing is said differently yet: the lines that use the facts come with release 2's bank.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.5.zip",
+      "checksum": "8f26b84891c50c34439417fc596ddd20"
+    },
+    {
       "version": "1.8.4",
       "min_core_version": "3.7.0",
       "changelog": "What you ask for is read, whatever kind it is: decades and years however they're said or written (\"\u201980s\", \"eighties\", \"early 90s\", \"1975 to 1983\"), genres however they're spelled, artists, albums and songs by name, moods, and the app's own suggestions, each said back as you said it. A name, a year or a genre that isn't in your library is said to be missing, where before AudioMuse-AI's sound search played something else. The newest request replaces the one before unless it says to build on it. Nothing to download again. For release 2's bigger bank, ready ahead: the server can keep which sentences each account has heard; the bank's sentences are sent to Audity compressed; and a bank past 2 GB comes down in parts.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.4.zip",
-      "checksum": "b5401c3bdaafa7d6b5d81f697325a5da"
+      "imageUrl": ""
     },
     {
       "version": "1.8.3",

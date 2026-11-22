@@ -11,9 +11,11 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
    ```
 
 2. Under **Manage Plugins**, install **Audity DJ**, then tap **Apply now (restart)**.
-3. Open **Audity DJ** in AudioMuse-AI's menu and tap **Download the Voice** (about 1.6 GB). An admin of your music server can start it from Audity too, under Settings → Radio & Autoplay.
+3. Open **Audity DJ** in AudioMuse-AI's menu and tap **Download the Voice** (about 2.2 GB on disk). An admin of your music server can start it from Audity too, under Settings → Radio & Autoplay.
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
+
+**Updating from 1.8.4:** tap **Update the Voice** on the plugin's page once (173 MB). It brings the artists' facts, which the DJ will use in its lines about the music: who's a person or a band, when they were born or formed, where they're from, and their albums in order. The bank you have stays, and nothing is said differently yet: the lines that use the facts come with the next bank.
 
 **Updating from 1.8.3:** 1.8.4 needs nothing downloaded again. It reads what you ask the DJ far more ways: decades and years as they're said or written, genres however they're spelled, names, and Audity's own suggestions.
 
@@ -25,7 +27,7 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 
 **Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voices, NeuTTS Air and Ming, are removed once the bank is in, freeing their space (3.4 GB and 4.5 GB).
 
-**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); and [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank.
+**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank; and [artist-facts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/artist-facts-1), the artists' facts, made from [MusicBrainz](https://musicbrainz.org)'s data under [CC0](https://musicbrainz.org/doc/About/Data_License).
 
 **If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 
@@ -40,7 +42,7 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 
 ## What it takes
 
-- **Disk:** about 1.6 GB once the voice is downloaded.
+- **Disk:** about 2.2 GB once the voice is downloaded, the artists' facts 0.4 GB of it.
 - **Memory:** about 1 GB. Once it's downloaded, the voice stays loaded, so the DJ is ready the moment you start it.
 - **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in about a second on a desktop processor.
 
@@ -57,8 +59,9 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
 - **Kept on your server only:**
   - in AudioMuse-AI's database: each account's DJ's last 30 lines, and the songs it played in the last 3 days;
   - also there, since 1.8.4 and only for Audity builds that send them: the bank sentences each account has heard, and when, up to 200,000 an account;
-  - in the plugin's folder: the last 150 lines, as sound.
-- **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights and the bank from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
+  - in the plugin's folder: the last 150 lines, as sound;
+- **Looked up on your server:** your library's artists in the artists' facts, and each song's pace, key, energy and moods in AudioMuse-AI's own analysis of your music.
+- **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights, the bank and the artists' facts from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
 
 ## Settings
 
