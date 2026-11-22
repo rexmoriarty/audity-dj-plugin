@@ -15,6 +15,8 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
+**Updating from 1.8.3:** 1.8.4 needs nothing downloaded again. It reads what you ask the DJ far more ways: decades and years as they're said or written, genres however they're spelled, names, and Audity's own suggestions.
+
 **Updating from 1.8.2:** 1.8.3 needs nothing downloaded again. When AudioMuse-AI can't reach your music server at the address it has saved, as after moving the server to another machine, Audity says so, with the one step to fix it: update that address in AudioMuse-AI's settings.
 
 **Updating from 1.8.1:** 1.8.2 needs nothing downloaded again: Theo's bank is the plugin's only voice now, and its page shows only the bank.
@@ -54,6 +56,7 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
 - **Only AudioMuse-AI admins** can use the plugin's page: downloading or removing the voice, trying a line, and seeing which accounts use the DJ.
 - **Kept on your server only:**
   - in AudioMuse-AI's database: each account's DJ's last 30 lines, and the songs it played in the last 3 days;
+  - also there, since 1.8.4 and only for Audity builds that send them: the bank sentences each account has heard, and when, up to 200,000 an account;
   - in the plugin's folder: the last 150 lines, as sound.
 - **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights and the bank from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
 
