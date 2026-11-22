@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.8.6",
+      "min_core_version": "3.7.0",
+      "changelog": "On a first install, the DJ talks as soon as Theo's bank is in, while the artists' facts are still coming down, and stopping the download there, or AudioMuse-AI restarting, keeps the bank: in 1.8.5 it waited for the facts, and the next try downloaded the bank again. Audity can now see when an update is ready and its size, for the same one Update the Voice the plugin's page shows. Nothing to download again.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.6.zip",
+      "checksum": "cc272bd58adf5d576b318998989d037b"
+    },
+    {
       "version": "1.8.5",
       "min_core_version": "3.7.0",
       "changelog": "Ready for the DJ to tell you about the music: Update the Voice brings the artists' facts from MusicBrainz (173 MB, free to use), who's a person or a band, when they were born or formed, where they're from and their albums in order, looked up on your server, so nothing about your library is sent anywhere. Audity can also ask each song's pace, key, energy and moods from AudioMuse-AI's own analysis, which needs no download. Whatever is new comes as one Update the Voice, its size said once; the bank you have stays. Nothing is said differently yet: the lines that use the facts come with release 2's bank.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.5.zip",
-      "checksum": "8f26b84891c50c34439417fc596ddd20"
+      "imageUrl": ""
     },
     {
       "version": "1.8.4",
