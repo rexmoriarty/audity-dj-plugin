@@ -15,6 +15,8 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
+**Updating from 1.8.6:** 1.8.7 needs nothing downloaded again. Years you ask for are the years that are read: "80s not 90s", "No, 80s" and "give me some 80s music" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name.
+
 **Updating from 1.8.5:** 1.8.6 needs nothing downloaded again. On a first install, the DJ talks as soon as Theo's bank is in, while the artists' facts are still coming down, and stopping the download there keeps the bank. Audity can also see when an update is ready, for the same one **Update the Voice**.
 
 **Updating from 1.8.4:** tap **Update the Voice** on the plugin's page once (173 MB). It brings the artists' facts, which the DJ will use in its lines about the music: who's a person or a band, when they were born or formed, where they're from, and their albums in order. The bank you have stays, and nothing is said differently yet: the lines that use the facts come with the next bank.

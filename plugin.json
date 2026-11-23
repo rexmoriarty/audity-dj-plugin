@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.8.7",
+      "min_core_version": "3.7.0",
+      "imageUrl": "",
+      "changelog": "Years you ask for are the years that are read: \"80s not 90s\", \"No, 80s\" and \"give me some 80s music\" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name. Nothing to download again.",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.7.zip",
+      "checksum": "28bcc3a8777e7681e742e38b89440bbb"
+    },
+    {
       "version": "1.8.6",
       "min_core_version": "3.7.0",
       "changelog": "On a first install, the DJ talks as soon as Theo's bank is in, while the artists' facts are still coming down, and stopping the download there, or AudioMuse-AI restarting, keeps the bank: in 1.8.5 it waited for the facts, and the next try downloaded the bank again. Audity can now see when an update is ready and its size, for the same one Update the Voice the plugin's page shows. Nothing to download again.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.6.zip",
-      "checksum": "cc272bd58adf5d576b318998989d037b"
+      "imageUrl": ""
     },
     {
       "version": "1.8.5",
