@@ -9,12 +9,24 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.9.0",
+      "min_core_version": "3.7.0",
+      "changelog": "The DJ itself is now a small program of its own, which the plugin downloads the first time it starts (45 KB) and runs beside AudioMuse-AI, on this server only. There's nothing to do: the voice, the bank, the artists' facts and everything the DJ remembers stay as they are, nothing else is downloaded again, and Audity works as before. Everything works with the server's internet down: a Plex sign-in no longer asks plex.tv each time, once a device has signed in while it was up. The voices from before Theo's bank, and their code, are gone.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.9.0.zip",
+      "checksum": "b038723b0ae846752650516c97a7addf"
+    },
+    {
+      "version": "1.8.8",
+      "min_core_version": "3.7.0",
+      "changelog": "Ready for the DJ to remember: your server keeps every song the DJ plays for you, on any device, and whether you skipped it, and every set it played, for good, so Audity can rest songs by time and say when it last played you one. Audity can also ask how long each line lasts, so the DJ can finish talking before the singing starts. Nothing to download again, and nothing changes until Audity's next update uses it.",
+      "imageUrl": ""
+    },
+    {
       "version": "1.8.7",
       "min_core_version": "3.7.0",
       "imageUrl": "",
-      "changelog": "Years you ask for are the years that are read: \"80s not 90s\", \"No, 80s\" and \"give me some 80s music\" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name. Nothing to download again.",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.8.7.zip",
-      "checksum": "28bcc3a8777e7681e742e38b89440bbb"
+      "changelog": "Years you ask for are the years that are read: \"80s not 90s\", \"No, 80s\" and \"give me some 80s music\" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name. Nothing to download again."
     },
     {
       "version": "1.8.6",
@@ -31,7 +43,7 @@
     {
       "version": "1.8.4",
       "min_core_version": "3.7.0",
-      "changelog": "What you ask for is read, whatever kind it is: decades and years however they're said or written (\"\u201980s\", \"eighties\", \"early 90s\", \"1975 to 1983\"), genres however they're spelled, artists, albums and songs by name, moods, and the app's own suggestions, each said back as you said it. A name, a year or a genre that isn't in your library is said to be missing, where before AudioMuse-AI's sound search played something else. The newest request replaces the one before unless it says to build on it. Nothing to download again. For release 2's bigger bank, ready ahead: the server can keep which sentences each account has heard; the bank's sentences are sent to Audity compressed; and a bank past 2 GB comes down in parts.",
+      "changelog": "What you ask for is read, whatever kind it is: decades and years however they're said or written (\"\u00e2\u20ac\u212280s\", \"eighties\", \"early 90s\", \"1975 to 1983\"), genres however they're spelled, artists, albums and songs by name, moods, and the app's own suggestions, each said back as you said it. A name, a year or a genre that isn't in your library is said to be missing, where before AudioMuse-AI's sound search played something else. The newest request replaces the one before unless it says to build on it. Nothing to download again. For release 2's bigger bank, ready ahead: the server can keep which sentences each account has heard; the bank's sentences are sent to Audity compressed; and a bank past 2 GB comes down in parts.",
       "imageUrl": ""
     },
     {
@@ -103,7 +115,7 @@
     {
       "version": "1.3.1",
       "min_core_version": "3.7.0",
-      "changelog": "The plugin's page works again: in 1.3.0 a mistake in its script left it showing \u2026 with no way to download the voice. The page also fills in at once, not after several seconds, and no longer keeps the server busy while it's open.",
+      "changelog": "The plugin's page works again: in 1.3.0 a mistake in its script left it showing \u00e2\u20ac\u00a6 with no way to download the voice. The page also fills in at once, not after several seconds, and no longer keeps the server busy while it's open.",
       "imageUrl": ""
     },
     {

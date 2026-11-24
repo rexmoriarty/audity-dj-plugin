@@ -15,6 +15,8 @@ The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://
 
 New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
 
+**Updating from 1.8.7:** 1.9.0 needs nothing downloaded again but the DJ itself, a 45 KB program the plugin downloads on its own the first time it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. Everything works with your server's internet down, once installed: a Plex sign-in no longer asks plex.tv each time, once a device has signed in while the internet was up. It's also ready for the DJ to remember for good: your server can keep every song the DJ plays for you, on any device, and whether you skipped it, and every set it played, so Audity can rest songs by time and say when it last played you one; and Audity can ask how long each line lasts, so the DJ finishes talking before the singing starts. Nothing changes in what you hear until Audity's next update uses them.
+
 **Updating from 1.8.6:** 1.8.7 needs nothing downloaded again. Years you ask for are the years that are read: "80s not 90s", "No, 80s" and "give me some 80s music" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name.
 
 **Updating from 1.8.5:** 1.8.6 needs nothing downloaded again. On a first install, the DJ talks as soon as Theo's bank is in, while the artists' facts are still coming down, and stopping the download there keeps the bank. Audity can also see when an update is ready, for the same one **Update the Voice**.
@@ -31,16 +33,19 @@ New versions show under **Manage Plugins**, and updating keeps the downloaded vo
 
 **Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voices, NeuTTS Air and Ming, are removed once the bank is in, freeing their space (3.4 GB and 4.5 GB).
 
-**No Hugging Face account is needed.** The files come from this repository's own releases: [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank; and [artist-facts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/artist-facts-1), the artists' facts, made from [MusicBrainz](https://musicbrainz.org)'s data under [CC0](https://musicbrainz.org/doc/About/Data_License).
+**No Hugging Face account is needed.** The files come from this repository's own releases: [audity-dj-engine-1.9.0](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/audity-dj-engine-1.9.0), the DJ itself; [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank; and [artist-facts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/artist-facts-1), the artists' facts, made from [MusicBrainz](https://musicbrainz.org)'s data under [CC0](https://musicbrainz.org/doc/About/Data_License).
 
 **If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 
 ## What it does
 
+The plugin is what runs inside AudioMuse-AI: the app's sign-in, what the DJ remembers in AudioMuse-AI's database, AudioMuse-AI's analysis and searches, and this page. The DJ itself, its voice, the request reader and the artists' facts, is Audity's DJ engine: a program of its own that the plugin downloads, starts and talks to on your server only (since 1.9.0).
+
 - **Says the DJ's lines from Theo's bank:** about 10,600 sentences made ahead with Qwen3-TTS (Apache-2.0), each a clip, so most lines are ready at once. Only what the bank can't have, the names of songs, artists and albums most of all, is said on your server's processor by [Pocket TTS](https://github.com/kyutai-labs/pocket-tts) (Kyutai; code MIT, weights CC-BY-4.0) in Theo's voice, in about a second. A line waits a few seconds at most for its names, then goes without them, so the DJ never waits.
 - **Reads what you ask the DJ, on your server,** for the Audity builds that send it (since 1.8.0): your words against your own library (play something, starting with a song, no more or less of something, more like this, something different, your most played, new releases, deep cuts, throwbacks), with no language model on the server or the phone. A mood that names nothing ("something chill for a rainy night") also goes to AudioMuse-AI's own text search, where CLAP is on in its settings and your library has been analyzed with it. The next songs' names are said ahead, so the DJ's lines come back at once.
 - **Theo** was designed from a written description, so his isn't a real person's voice. His bank is the DJ's only voice.
 - **Remembers what the DJ said and played** for each account, so the DJ on one device knows what another played this week.
+- **Works with your server's internet down,** once it's installed: the voice, the names, your requests, the artists' facts and what it remembers are all on your server. Only installing, downloading the voice and updating need the internet.
 - **Keeps the last 150 lines it made**, so a line said before comes back at once.
 - **Finds songs that sound alike** from AudioMuse-AI's analysis, in the library of the server the app signed in to.
 
@@ -58,14 +63,15 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
 
 ## Sign-in and privacy
 
-- **Audity signs in with the account it already uses** on your music server, and the plugin checks it with that server. For Plex, it also asks plex.tv for the account's name. A check is remembered for 10 minutes.
+- **Audity signs in with the account it already uses** on your music server, and the plugin checks it with that server. For Plex, the account's name comes from plex.tv the first time a device signs in, and is kept on your server (by a hash of the sign-in, never the sign-in itself), so later sign-ins are checked by your Plex server alone, the internet up or not. A check is remembered for 10 minutes.
 - **Only AudioMuse-AI admins** can use the plugin's page: downloading or removing the voice, trying a line, and seeing which accounts use the DJ.
 - **Kept on your server only:**
   - in AudioMuse-AI's database: each account's DJ's last 30 lines, and the songs it played in the last 3 days;
+  - also there, since 1.9.0 and only for Audity builds that send them: every song the DJ played each account, when, on which device and whether it was skipped, and each set's idea, kept for good;
   - also there, since 1.8.4 and only for Audity builds that send them: the bank sentences each account has heard, and when, up to 200,000 an account;
   - in the plugin's folder: the last 150 lines, as sound;
 - **Looked up on your server:** your library's artists in the artists' facts, and each song's pace, key, energy and moods in AudioMuse-AI's own analysis of your music.
-- **Nothing is sent anywhere else.** The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights, the bank and the artists' facts from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
+- **Nothing is sent anywhere else.** The DJ engine comes down when the plugin first starts (45 KB, checked against its SHA-256). The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights, the bank and the artists' facts from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
 
 ## Settings
 
@@ -91,3 +97,7 @@ handle /plugins/audity_dj/app/* { reverse_proxy audiomuse:8000 }
 ```
 
 The first is nginx and the second is Caddy, with `audiomuse` standing for AudioMuse-AI's address on your server. In Nginx Proxy Manager, add it under **Custom Locations** on your music server's proxy host.
+
+## License
+
+The plugin's code, in this repository's `audity_dj-*.zip` from 1.9.0 on, is under the GNU Affero General Public License v3.0 (`LICENSE`), as AudioMuse-AI is. Audity's DJ engine, which the plugin downloads from this repository's releases and runs as a program of its own, isn't part of it: it's Audity's, under its own terms (`LICENSE.txt` in its release), and it credits Pocket TTS, Qwen3-TTS and MusicBrainz in its `NOTICE.txt`.
