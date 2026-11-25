@@ -9,12 +9,24 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.11.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Ask the DJ for something misspelled or misheard and it finds what you meant in your library: an artist, an album, a song or a genre a letter or two off, or one that sounds the same (\"fleetwod mac\", \"boss scaggs\", \"billie jeen\", \"classic rokc\"). What's spelled right still comes first, and everyday words stay what they are. Only the DJ's small program comes down again; the voice and the bank stay as they are.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.11.0.zip",
+      "checksum": "73231344518f7ea6679ecf1c04565b1d"
+    },
+    {
+      "version": "1.10.1",
+      "min_core_version": "3.7.0",
+      "changelog": "Ask the DJ for a kind of music in the plural and it finds it: musicals, soundtracks, show tunes, as your genres name them in the singular. It says them back as you asked, and leaves them out when you ask it to. Only the DJ's small program comes down again; the voice and the bank stay as they are.",
+      "imageUrl": ""
+    },
+    {
       "version": "1.10.0",
       "min_core_version": "3.7.0",
       "changelog": "Ask the DJ for a song by its exact title, an album or an artist, as you'd say it, and it finds it. Ask it to add something to your queue, or to play it next, and it does, with the song on playing on. Asking it to change the vibe changes it from the next song. It understands what you mean, not only names: songs for a rainy day, something you haven't heard in a while, an artist's newest album, more like the song on or the rest of its album, and who's singing. Only the DJ's small program comes down again (57 KB); the voice and the bank stay as they are. Audity's next update uses all of it.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.10.0.zip",
-      "checksum": "fcd488b37812c672c7f2267cc8c57189"
+      "imageUrl": ""
     },
     {
       "version": "1.9.0",
