@@ -2,44 +2,45 @@
 
 The talking DJ for the Audity music app, as a plugin for [AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI). The DJ talks from your own server, for Navidrome, Jellyfin or Plex, whichever AudioMuse-AI is connected to. Once the plugin is installed, Audity finds it on its own: the DJ shows on every device signed in to your music server, and it talks with the phone locked.
 
+## What you need
+
+- **[AudioMuse-AI](https://github.com/NeptuneHub/AudioMuse-AI) 3.7.0 or later**, running and connected to your Navidrome, Jellyfin or Plex. Its own README covers installing it, most often with Docker Compose.
+- **AudioMuse-AI's port 8000 open on your home network**, as its compose file publishes it (`ports: - "8000:8000"` on the flask container), so your phone can reach it. Audity looks for it at your music server's address on that port. If it's on another machine or port, you type its address in Audity (below).
+- **Audity on your iPhone or iPad (iOS 27 or later), signed in to the same music server** AudioMuse-AI is connected to. The DJ uses the account Audity already signs in with; there's nothing more to sign in to.
+- **On the server:** about 2.2 GB of disk and 1 GB of memory once the voice is in, and the internet while it downloads (from github.com, pypi.org and download.pytorch.org).
+
 ## Install
 
-1. In AudioMuse-AI (3.7.0 or later), open **Plugins → Repositories** and add:
+1. In AudioMuse-AI, open **Plugins → Repositories** and add:
 
    ```
    https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/manifest.json
    ```
 
 2. Under **Manage Plugins**, install **Audity DJ**, then tap **Apply now (restart)**.
-3. Open **Audity DJ** in AudioMuse-AI's menu and tap **Download the Voice** (about 2.2 GB on disk). An admin of your music server can start it from Audity too, under Settings → Radio & Autoplay.
+3. In Audity, open **Settings → Radio & Autoplay**. The DJ's switch shows there by itself once Audity finds the plugin. The first time, Audity asks to find devices on your local network: allow it, or it can't reach your server at home.
+4. Download the DJ's voice to your server, once: in Audity, tap **Download the Voice to Your Server** under the DJ's switch, or in AudioMuse-AI open **Audity DJ** in its menu and tap **Download the Voice**. Only an admin of your music server can start it from Audity (on Plex, the server's owner); anyone signed in to AudioMuse-AI as an admin can start it there. It downloads on the server, so your phone can close, and it takes 2.2 GB on disk once it's in. The DJ is ready when it's done, and its station shows first in Stations.
 
-New versions show under **Manage Plugins**, and updating keeps the downloaded voice.
+New versions show under **Manage Plugins**, and updating keeps the downloaded voice. What each version changed is under **Updating** at the end of this page.
 
-**Updating from 1.10.0:** 1.11.0 needs nothing downloaded again but the DJ itself, a 62 KB update the plugin downloads on its own when it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. A name asked for misspelled or misheard is the one in your library it's closest to: an artist, an album, a song or a genre a letter or two off, or one that sounds the same ("fleetwod mac", "boss scaggs", "classic rokc"); what's spelled right still comes first. And a kind of music asked for in the plural is your genre of it: "musicals", "soundtracks", "show tunes" (from 1.10.1, which comes with it).
+To keep the voice when AudioMuse-AI's container is re-created, keep its plugin folder on your disk. If your compose file doesn't already, add this under the flask container's `volumes:`:
 
-**Updating from 1.9.0:** 1.10.0 needs nothing downloaded again but the DJ itself, a 57 KB update the plugin downloads on its own when it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. What you ask the DJ is understood, not only matched: a song by its exact title, an album or an artist, as you'd say it; "add this to the queue" and "play this next", with the song on playing on, and the DJ says when it plays; a change of vibe from the next song; songs for a rainy day, something you haven't heard in a while, an artist's newest album, more like the song on or the rest of its album, and who's singing. Audity's newer builds use it; older ones read requests as they did.
+```yaml
+      - ./plugins:/app/plugin/installed
+```
 
-**Updating from 1.8.7:** 1.9.0 needs nothing downloaded again but the DJ itself, a 45 KB program the plugin downloads on its own the first time it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. Everything works with your server's internet down, once installed: a Plex sign-in no longer asks plex.tv each time, once a device has signed in while the internet was up. It's also ready for the DJ to remember for good: your server can keep every song the DJ plays for you, on any device, and whether you skipped it, and every set it played, so Audity can rest songs by time and say when it last played you one; and Audity can ask how long each line lasts, so the DJ finishes talking before the singing starts. Nothing changes in what you hear until Audity's next update uses them.
+## If Audity doesn't find it
 
-**Updating from 1.8.6:** 1.8.7 needs nothing downloaded again. Years you ask for are the years that are read: "80s not 90s", "No, 80s" and "give me some 80s music" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name.
+Audity says why on the DJ's pages, in Settings → Radio & Autoplay. By what it says:
 
-**Updating from 1.8.5:** 1.8.6 needs nothing downloaded again. On a first install, the DJ talks as soon as Theo's bank is in, while the artists' facts are still coming down, and stopping the download there keeps the bank. Audity can also see when an update is ready, for the same one **Update the Voice**.
-
-**Updating from 1.8.4:** tap **Update the Voice** on the plugin's page once (173 MB). It brings the artists' facts, which the DJ will use in its lines about the music: who's a person or a band, when they were born or formed, where they're from, and their albums in order. The bank you have stays, and nothing is said differently yet: the lines that use the facts come with the next bank.
-
-**Updating from 1.8.3:** 1.8.4 needs nothing downloaded again. It reads what you ask the DJ far more ways: decades and years as they're said or written, genres however they're spelled, names, and Audity's own suggestions.
-
-**Updating from 1.8.2:** 1.8.3 needs nothing downloaded again. When AudioMuse-AI can't reach your music server at the address it has saved, as after moving the server to another machine, Audity says so, with the one step to fix it: update that address in AudioMuse-AI's settings.
-
-**Updating from 1.8.1:** 1.8.2 needs nothing downloaded again: Theo's bank is the plugin's only voice now, and its page shows only the bank.
-
-**Updating from 1.4 to 1.8.0:** 1.8.1 brings Theo's bank made again with his voice trained once more, so his moods come through more. Tap **Download the New Bank** on the plugin's page once (0.33 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed.
-
-**Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voices, NeuTTS Air and Ming, are removed once the bank is in, freeing their space (3.4 GB and 4.5 GB).
-
-**No Hugging Face account is needed.** The files come from this repository's own releases: [audity-dj-engine-1.11.0](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/audity-dj-engine-1.11.0), the DJ itself; [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank; and [artist-facts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/artist-facts-1), the artists' facts, made from [MusicBrainz](https://musicbrainz.org)'s data under [CC0](https://musicbrainz.org/doc/About/Data_License).
-
-**If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
+- **"It needs AudioMuse-AI with its Audity DJ plugin on your server."** Nothing answered as the plugin. Check that it's installed and AudioMuse-AI restarted (step 2). If AudioMuse-AI isn't on your music server's machine, or not on port 8000, type its address under **Get the DJ → AudioMuse-AI Address**: its machine's IP address or name with the port, as `nas.local:8000`. It can be changed later under **Settings → Radio & Autoplay → AudioMuse-AI Address**, as after moving AudioMuse-AI to another machine.
+- **"AudioMuse-AI didn't answer."** Check that it's running and that port 8000 is published (see What you need), then type its address as above.
+- **You sign in to your music server with an https address** (as `https://music.example.com`): at home, Audity tries that name's home address on port 8000 where your network answers the name with one, and otherwise the https address itself, which needs the one proxy rule under Away from home. Or type AudioMuse-AI's home address, as above.
+- **"AudioMuse-AI can't reach your Navidrome (or Jellyfin, or Plex) at the address it has saved."** In AudioMuse-AI's settings, give your music server's network address: its machine's IP address or name with the port, as `http://nas.local:4533`. Inside Docker, `localhost` is AudioMuse-AI's own container, not your server.
+- **"Audity DJ on your server turned down your sign-in."** AudioMuse-AI is connected to another music server than the one Audity is signed in to. Connect it to the same one, in its settings.
+- **"Audity isn't allowed on your local network."** Turn on Local Network for Audity in iPhone Settings → Apps → Audity.
+- **"That isn't an address Audity can read."** Type its machine's IP address or name with the port, as `nas.local:8000` or `http://nas.local:8000`.
+- **The voice didn't download.** The plugin's page in AudioMuse-AI says which step failed. Most often the server couldn't reach github.com, pypi.org or download.pytorch.org; tap **Download the Voice** again once it can. The steps are written to `download.log` in the plugin's files folder, inside AudioMuse-AI's container.
 
 ## What it does
 
@@ -59,12 +60,6 @@ The plugin is what runs inside AudioMuse-AI: the app's sign-in, what the DJ reme
 - **Memory:** about 1 GB. Once it's downloaded, the voice stays loaded, so the DJ is ready the moment you start it.
 - **Processor:** 1 thread while it speaks. A line of the bank's sentences alone is ready at once; one with a name in about a second on a desktop processor.
 
-To keep the voice when AudioMuse-AI's container is re-created, keep its plugin folder on your disk. If your compose file doesn't already, add this under the flask container's `volumes:`:
-
-```yaml
-      - ./plugins:/app/plugin/installed
-```
-
 ## Sign-in and privacy
 
 - **Audity signs in with the account it already uses** on your music server, and the plugin checks it with that server. For Plex, the account's name comes from plex.tv the first time a device signs in, and is kept on your server (by a hash of the sign-in, never the sign-in itself), so later sign-ins are checked by your Plex server alone, the internet up or not. A check is remembered for 10 minutes.
@@ -75,7 +70,7 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
   - also there, since 1.8.4 and only for Audity builds that send them: the bank sentences each account has heard, and when, up to 200,000 an account;
   - in the plugin's folder: the last 150 lines, as sound;
 - **Looked up on your server:** your library's artists in the artists' facts, and each song's pace, key, energy and moods in AudioMuse-AI's own analysis of your music.
-- **Nothing is sent anywhere else.** The DJ engine comes down when the plugin first starts (57 KB, checked against its SHA-256). The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights, the bank and the artists' facts from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
+- **Nothing is sent anywhere else.** The DJ engine comes down when the plugin first starts (62 KB, checked against its SHA-256). The voice's download comes only when an admin starts it: PyTorch for processors, Pocket TTS and the Python packages it needs, all at fixed versions, and the weights, the bank and the artists' facts from this repository's releases (Hugging Face only if GitHub can't be reached), each file checked against its SHA-256.
 
 ## Settings
 
@@ -83,10 +78,6 @@ Set in the flask container's environment, if ever needed:
 
 - `AUDITY_DJ_THREADS`: how many processor threads the voice uses (Pocket TTS's own 1 by default, the quicker).
 - `AUDITY_DJ_NAME_WAIT`: how many seconds a line waits for its names before it goes without them (12).
-
-## If Audity doesn't find it
-
-Audity looks for AudioMuse-AI at your music server's address, on port 8000. If yours is somewhere else, type its address in Audity under **Settings → Radio & Autoplay → Get the DJ → AudioMuse-AI Address**.
 
 ## Away from home
 
@@ -101,6 +92,36 @@ handle /plugins/audity_dj/app/* { reverse_proxy audiomuse:8000 }
 ```
 
 The first is nginx and the second is Caddy, with `audiomuse` standing for AudioMuse-AI's address on your server. In Nginx Proxy Manager, add it under **Custom Locations** on your music server's proxy host.
+
+## Downloads and Hugging Face
+
+**No Hugging Face account is needed.** The files come from this repository's own releases: [audity-dj-engine-1.11.0](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/audity-dj-engine-1.11.0), the DJ itself; [pocket-tts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/pocket-tts-1), [Pocket TTS](https://github.com/kyutai-labs/pocket-tts)'s English weights and tokenizer by [Kyutai](https://kyutai.org), unchanged, under [CC-BY-4.0](https://creativecommons.org/licenses/by/4.0/); [bank-theo-qwen-3](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/bank-theo-qwen-3), Theo's bank; and [artist-facts-1](https://github.com/rexmoriarty/audity-dj-plugin/releases/tag/artist-facts-1), the artists' facts, made from [MusicBrainz](https://musicbrainz.org)'s data under [CC0](https://musicbrainz.org/doc/About/Data_License).
+
+**If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
+
+## Updating
+
+**Updating from 1.10.0:** 1.11.0 needs nothing downloaded again but the DJ itself, a 62 KB update the plugin downloads on its own when it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. A name asked for misspelled or misheard is the one in your library it's closest to: an artist, an album, a song or a genre a letter or two off, or one that sounds the same ("fleetwod mac", "boss scaggs", "classic rokc"); what's spelled right still comes first. And a kind of music asked for in the plural is your genre of it: "musicals", "soundtracks", "show tunes" (from 1.10.1, which comes with it).
+
+**Updating from 1.9.0:** 1.10.0 needs nothing downloaded again but the DJ itself, a 57 KB update the plugin downloads on its own when it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. What you ask the DJ is understood, not only matched: a song by its exact title, an album or an artist, as you'd say it; "add this to the queue" and "play this next", with the song on playing on, and the DJ says when it plays; a change of vibe from the next song; songs for a rainy day, something you haven't heard in a while, an artist's newest album, more like the song on or the rest of its album, and who's singing. Audity's newer builds use it; older ones read requests as they did.
+
+**Updating from 1.8.7:** 1.9.0 needs nothing downloaded again but the DJ itself, a 45 KB program the plugin downloads on its own the first time it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. Everything works with your server's internet down, once installed: a Plex sign-in no longer asks plex.tv each time, once a device has signed in while the internet was up. It's also ready for the DJ to remember for good: your server can keep every song the DJ plays for you, on any device, and whether you skipped it, and every set it played, so Audity can rest songs by time and say when it last played you one; and Audity can ask how long each line lasts, so the DJ finishes talking before the singing starts. Nothing changes in what you hear until Audity's next update uses them.
+
+**Updating from 1.8.6:** 1.8.7 needs nothing downloaded again. Years you ask for are the years that are read: "80s not 90s", "No, 80s" and "give me some 80s music" ask for the eighties, also where a song, album or artist in your library is called something like Give Me Some. Such a name still plays when you ask for it by name.
+
+**Updating from 1.8.5:** 1.8.6 needs nothing downloaded again. On a first install, the DJ talks as soon as Theo's bank is in, while the artists' facts are still coming down, and stopping the download there keeps the bank. Audity can also see when an update is ready, for the same one **Update the Voice**.
+
+**Updating from 1.8.4:** tap **Update the Voice** on the plugin's page once (173 MB). It brings the artists' facts, which the DJ will use in its lines about the music: who's a person or a band, when they were born or formed, where they're from, and their albums in order. The bank you have stays, and nothing is said differently yet: the lines that use the facts come with the next bank.
+
+**Updating from 1.8.3:** 1.8.4 needs nothing downloaded again. It reads what you ask the DJ far more ways: decades and years as they're said or written, genres however they're spelled, names, and Audity's own suggestions.
+
+**Updating from 1.8.2:** 1.8.3 needs nothing downloaded again. When AudioMuse-AI can't reach your music server at the address it has saved, as after moving the server to another machine, Audity says so, with the one step to fix it: update that address in AudioMuse-AI's settings.
+
+**Updating from 1.8.1:** 1.8.2 needs nothing downloaded again: Theo's bank is the plugin's only voice now, and its page shows only the bank.
+
+**Updating from 1.4 to 1.8.0:** 1.8.1 brings Theo's bank made again with his voice trained once more, so his moods come through more. Tap **Update the Voice** on the plugin's page once (0.33 GB). Only the bank comes down, the bank before keeps talking until it's in, and it's then removed.
+
+**Updating from 1.3 or earlier:** 1.4.0 brings Theo's bank. Tap **Download the Voice** on the plugin's page once more. The earlier voices, NeuTTS Air and Ming, are removed once the bank is in, freeing their space (3.4 GB and 4.5 GB).
 
 ## License
 
