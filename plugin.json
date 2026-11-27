@@ -2,19 +2,25 @@
   "id": "audity_dj",
   "name": "Audity DJ",
   "author": "Audity",
-  "description": "The talking DJ for the Audity app, on Navidrome, Jellyfin or Plex: Theo's lines from a bank of clips made ahead, with only the names said on this server, only while a DJ session is on, and what the DJ remembers for each account, shared by all your devices.",
+  "description": "A talking DJ for the Audity music app, for Navidrome, Jellyfin or Plex: it picks songs from your library and introduces them between songs, like a radio host, in a voice made on this server. After installing, download the voice once from this plugin's page or from Audity.",
   "targets": [
     "flask"
   ],
   "requirements": [],
   "versions": [
     {
+      "version": "1.12.0",
+      "min_core_version": "3.7.0",
+      "changelog": "Audity finds the DJ by itself on your home network where AudioMuse-AI isn't on your music server's machine: the plugin announces itself with Bonjour, when AudioMuse-AI's container is on your network (network_mode: host, or a macvlan network); on Docker's usual network, type its address in Audity as before. When the voice's download fails, the plugin's page shows what it said last, and once the voice is in, the page says where to find the DJ in Audity. A plainer description in the plugin list. Nothing to download again.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.12.0.zip",
+      "checksum": "31e454b713cb331cf675414deb677c7e"
+    },
+    {
       "version": "1.11.0",
       "min_core_version": "3.7.0",
       "changelog": "Ask the DJ for something misspelled or misheard and it finds what you meant in your library: an artist, an album, a song or a genre a letter or two off, or one that sounds the same (\"fleetwod mac\", \"boss scaggs\", \"billie jeen\", \"classic rokc\"). What's spelled right still comes first, and everyday words stay what they are. Only the DJ's small program comes down again; the voice and the bank stay as they are.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.11.0.zip",
-      "checksum": "73231344518f7ea6679ecf1c04565b1d"
+      "imageUrl": ""
     },
     {
       "version": "1.10.1",

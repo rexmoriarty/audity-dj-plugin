@@ -33,14 +33,14 @@ To keep the voice when AudioMuse-AI's container is re-created, keep its plugin f
 
 Audity says why on the DJ's pages, in Settings → Radio & Autoplay. By what it says:
 
-- **"It needs AudioMuse-AI with its Audity DJ plugin on your server."** Nothing answered as the plugin. Check that it's installed and AudioMuse-AI restarted (step 2). If AudioMuse-AI isn't on your music server's machine, or not on port 8000, type its address under **Get the DJ → AudioMuse-AI Address**: its machine's IP address or name with the port, as `nas.local:8000`. It can be changed later under **Settings → Radio & Autoplay → AudioMuse-AI Address**, as after moving AudioMuse-AI to another machine.
+- **"It needs AudioMuse-AI with its Audity DJ plugin on your server."** Nothing answered as the plugin. Check that it's installed and AudioMuse-AI restarted (step 2). If AudioMuse-AI isn't on your music server's machine, Audity finds it by itself where the plugin announces itself on your home network with Bonjour (since 1.12.0). That's heard only with AudioMuse-AI's container on your network: `network_mode: host` on the flask container, or a macvlan network. On Docker's usual network the announcement stays inside Docker, so there, or if it's not on port 8000, type its address under **Get the DJ → AudioMuse-AI Address**: its machine's IP address or name with the port, as `nas.local:8000`. It can be changed later under **Settings → Radio & Autoplay → AudioMuse-AI Address**, as after moving AudioMuse-AI to another machine.
 - **"AudioMuse-AI didn't answer."** Check that it's running and that port 8000 is published (see What you need), then type its address as above.
 - **You sign in to your music server with an https address** (as `https://music.example.com`): at home, Audity tries that name's home address on port 8000 where your network answers the name with one, and otherwise the https address itself, which needs the one proxy rule under Away from home. Or type AudioMuse-AI's home address, as above.
 - **"AudioMuse-AI can't reach your Navidrome (or Jellyfin, or Plex) at the address it has saved."** In AudioMuse-AI's settings, give your music server's network address: its machine's IP address or name with the port, as `http://nas.local:4533`. Inside Docker, `localhost` is AudioMuse-AI's own container, not your server.
 - **"Audity DJ on your server turned down your sign-in."** AudioMuse-AI is connected to another music server than the one Audity is signed in to. Connect it to the same one, in its settings.
 - **"Audity isn't allowed on your local network."** Turn on Local Network for Audity in iPhone Settings → Apps → Audity.
 - **"That isn't an address Audity can read."** Type its machine's IP address or name with the port, as `nas.local:8000` or `http://nas.local:8000`.
-- **The voice didn't download.** The plugin's page in AudioMuse-AI says which step failed. Most often the server couldn't reach github.com, pypi.org or download.pytorch.org; tap **Download the Voice** again once it can. The steps are written to `download.log` in the plugin's files folder, inside AudioMuse-AI's container.
+- **The voice didn't download.** The plugin's page in AudioMuse-AI says which step failed and, since 1.12.0, what the download said last. Most often the server couldn't reach github.com, pypi.org or download.pytorch.org; tap **Download the Voice** again once it can. The steps are written to `download.log` in the plugin's files folder, inside AudioMuse-AI's container.
 
 ## What it does
 
@@ -78,6 +78,8 @@ Set in the flask container's environment, if ever needed:
 
 - `AUDITY_DJ_THREADS`: how many processor threads the voice uses (Pocket TTS's own 1 by default, the quicker).
 - `AUDITY_DJ_NAME_WAIT`: how many seconds a line waits for its names before it goes without them (12).
+- `AUDITY_DJ_BONJOUR`: `off` keeps the plugin from announcing itself on your network (on). Since 1.12.0.
+- `AUDITY_DJ_BONJOUR_PORT`: the port it announces, where AudioMuse-AI's isn't 8000 (8000).
 
 ## Away from home
 
@@ -100,6 +102,8 @@ The first is nginx and the second is Caddy, with `audiomuse` standing for AudioM
 **If the download ever asks for a Hugging Face token,** GitHub couldn't be reached, so it went to Hugging Face, where Kyutai's weights are free but only for an account that has accepted their terms. Make a free account at huggingface.co, accept the terms on [kyutai/pocket-tts](https://huggingface.co/kyutai/pocket-tts), create a **Read** token under Settings → Access Tokens, paste it in the box on the plugin's page, and tap **Download the Voice** again. The token is used for that download only and isn't kept.
 
 ## Updating
+
+**Updating from 1.11.0:** 1.12.0 needs nothing downloaded again. Where AudioMuse-AI isn't on your music server's machine, Audity finds it by itself on your home network, with nothing typed: the plugin announces itself with Bonjour, which is heard with AudioMuse-AI's container on your network (`network_mode: host`, or a macvlan network); on Docker's usual network, type its address in Audity as before. When the voice's download fails, the plugin's page shows what the download said last. Once the voice is in, the page says where the DJ is in Audity: open Stations and play DJ.
 
 **Updating from 1.10.0:** 1.11.0 needs nothing downloaded again but the DJ itself, a 62 KB update the plugin downloads on its own when it starts. The voice, the bank, the artists' facts and everything the DJ remembers stay as they are. A name asked for misspelled or misheard is the one in your library it's closest to: an artist, an album, a song or a genre a letter or two off, or one that sounds the same ("fleetwod mac", "boss scaggs", "classic rokc"); what's spelled right still comes first. And a kind of music asked for in the plural is your genre of it: "musicals", "soundtracks", "show tunes" (from 1.10.1, which comes with it).
 
