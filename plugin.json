@@ -9,12 +9,18 @@
   "requirements": [],
   "versions": [
     {
+      "version": "1.13.0",
+      "min_core_version": "3.7.0",
+      "changelog": "New artist facts for the DJ to tell: who's in a band whose lineup never changed, the city an artist comes from, the label an album came out on, and whether a song is a cover (and when the original came out) or from a soundtrack. Press Update the Voice on the plugin's page once: it downloads the new facts, about 230 MB, and removes the old ones. The DJ starts telling them with its next bank of lines.",
+      "imageUrl": "",
+      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.13.0.zip",
+      "checksum": "40b6a1fd0b31cf5800a2721f750f938a"
+    },
+    {
       "version": "1.12.0",
       "min_core_version": "3.7.0",
       "changelog": "Audity finds the DJ by itself on your home network where AudioMuse-AI isn't on your music server's machine: the plugin announces itself with Bonjour, when AudioMuse-AI's container is on your network (network_mode: host, or a macvlan network); on Docker's usual network, type its address in Audity as before. When the voice's download fails, the plugin's page shows what it said last, and once the voice is in, the page says where to find the DJ in Audity. A plainer description in the plugin list. Nothing to download again.",
-      "imageUrl": "",
-      "sourceUrl": "https://raw.githubusercontent.com/rexmoriarty/audity-dj-plugin/main/audity_dj-1.12.0.zip",
-      "checksum": "31e454b713cb331cf675414deb677c7e"
+      "imageUrl": ""
     },
     {
       "version": "1.11.0",
